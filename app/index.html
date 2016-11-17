@@ -20,14 +20,20 @@
 
   </form>
   <button ng-click = "submit()">submit</button>
+<div class = "search">
+  <label for="search"> search: <input type="text" ng-model="searchText"></label>
+</div>
 
-<div ng-repeat = "movie in movies">
-  <li>{{movie.title}}</li>
+
+<div ng-repeat = "movie in movies| filter:searchText">
+  <div id = "{{$index}}">
+  <li><button ng-click = "check()">{{movie.title}}</button></li>
+  </div>
 </div>
 
   <!--build:js js/main.min.js -->
   <script src="js/lib/angular.js"></script>
-  <script src="js/lib/another-library.js"></script>
+  <script src="js/lib/angular-route.js"></script>
   <script src="js/main.js"></script>
   <!-- endbuild -->
 </body>

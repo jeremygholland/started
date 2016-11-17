@@ -1,7 +1,20 @@
 var app = angular.module('app', []);
 
+app.config(function($routeProvider){
+  $routeProvider
+      .when('/', {
+        templateUrl: 'index.html',
+        controller: 'myCtrl',
+        controllerAs: 'myCtrl'
+      })
+      .otherwise({
+       redirectTo: '/'
+     });
+})
 
-app.controller('myCtrl' , ['$scope', function($scope){
+
+var app =angular.module('app', [])
+app.controller('myCtrl' , ['$scope', '$filter', function($scope, $filter){
   $scope.movies = [];
  $scope.submit = function(){
    console.log('this worked?')
@@ -10,9 +23,12 @@ app.controller('myCtrl' , ['$scope', function($scope){
      genre: $scope.movie.genre,
      actors: $scope.movie.actors,
      year: $scope.movie.year,
-     rating: $scope.movie.rating
+     rating: $scope.movie.rating,
+     id: $scope.movies.length +1
    })
    return $scope.movies
  }
-  $scope.test = "test"
+  $scope.check = function(){
+    console.log($scope.movies.id)
+  }
 }])
