@@ -1,24 +1,12 @@
-var app = angular.module('app', []);
+var app = angular.module('app', ['firebase'])
 
-app.config(function($routeProvider){
-  $routeProvider
-      .when('/', {
-        templateUrl: 'index.html',
-        controller: 'myCtrl',
-        controllerAs: 'myCtrl'
-      })
-      .otherwise({
-       redirectTo: '/'
-     });
-})
+app.controller('myCtrl' , ['$scope', '$filter','$firebase', function($scope, $filter, $firebase){
+  var fireRef = new Firebase('https://inmotioncrud.firebaseio.com/');
+  $scope.movies = $firebase(fireRef).$asArray();
+  $scope.newMovie = "";
 
-
-var app =angular.module('app', [])
-app.controller('myCtrl' , ['$scope', '$filter', function($scope, $filter){
-  $scope.movies = [];
- $scope.submit = function(){
-   console.log('this worked?')
-   $scope.movies.push({
+ $scope.submitMovie = function(){
+   $scope.movies.$add({
      title:$scope.movie.title,
      genre: $scope.movie.genre,
      actors: $scope.movie.actors,
@@ -26,7 +14,11 @@ app.controller('myCtrl' , ['$scope', '$filter', function($scope, $filter){
      rating: $scope.movie.rating,
      id: $scope.movies.length +1
    })
-   return $scope.movies
+   $scope.newMovie = '';
+ }
+
+ $scope.removeMovie = function(movie){
+   $scope.movies.$remove(movie);
  }
   $scope.check = function(){
     console.log($scope.movies.id)
