@@ -1,10 +1,11 @@
 var app = angular.module('app', ['firebase'])
 
 app.controller('myCtrl' , ['$scope', '$filter','$firebase', function($scope, $filter, $firebase){
-  var fireRef = new Firebase('https://inmotioncrud.firebaseio.com/');
+
+
+  var fireRef = new Firebase('https://inmotioncrud.firebaseio.com/movies');
   $scope.movies = $firebase(fireRef).$asArray();
   $scope.newMovie = "";
-
  $scope.submitMovie = function(){
    $scope.movies.$add({
      title:$scope.movie.title,
@@ -12,7 +13,6 @@ app.controller('myCtrl' , ['$scope', '$filter','$firebase', function($scope, $fi
      actors: $scope.movie.actors,
      year: $scope.movie.year,
      rating: $scope.movie.rating,
-     id: $scope.movies.length +1
    })
    $scope.newMovie = '';
  }
