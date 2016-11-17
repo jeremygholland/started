@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app = "app">
 
 <head>
   <meta charset="UTF-8">
@@ -10,11 +10,23 @@
   <!--endbuild-->
 </head>
 
-<body>
-  This is a gulp starter!
-  
+<body ng-controller = "myCtrl">
+  <form action="submit" ng-submit= "submit()">
+    <input type="text" ng-model = "movie.title" placeholder = "title">
+    <input type="text" ng-model = "movie.genre" placeholder = "genre">
+    <input type="text" ng-model = "movie.actors" placeholder = "actors">
+    <input type="text" ng-model = "movie.year" placeholder = "year released">
+    <input type="text" ng-model = "movie.rating" placeholder = "rating">
+
+  </form>
+  <button ng-click = "submit()">submit</button>
+
+<div ng-repeat = "movie in movies">
+  <li>{{movie.title}}</li>
+</div>
+
   <!--build:js js/main.min.js -->
-  <script src="js/lib/a-library.js"></script>
+  <script src="js/lib/angular.js"></script>
   <script src="js/lib/another-library.js"></script>
   <script src="js/main.js"></script>
   <!-- endbuild -->
