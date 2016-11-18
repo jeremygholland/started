@@ -7,7 +7,7 @@
 </div>
 <div class="row">
     <div class="col-md-3"><p>{{movie.genre}}</p></div>
-  <div class="col-md-3"><p>{{movie.actors}}</p></div>
+  <div class="col-md-3"><p>Actors:<ul><li ng-repeat = "(key, value) in movie.actors track by $index"><p>{{value}}</p></li></ul></p></div>
   <div class="col-md-3"><p>{{movie.rating}}</p></div>
 </div>
 </div>

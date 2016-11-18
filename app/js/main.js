@@ -16,7 +16,7 @@ app.config([
         templateUrl: 'views/add.html'
       })
       .state('delete', {
-        controller: 'myCtrl',
+        controller: 'deleteCtrl',
         url: '/delete',
         templateUrl: 'views/delete.html'
       })
@@ -28,8 +28,4 @@ app.controller('myCtrl' , ['$scope', '$filter','$firebase', function($scope, $fi
 
   var fireRef = new Firebase('https://inmotioncrud.firebaseio.com/movies');
   $scope.movies = $firebase(fireRef).$asArray();
-
- $scope.removeMovie = function(movie){
-   $scope.movies.$remove(movie);
- }
 }])

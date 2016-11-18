@@ -1,9 +1,9 @@
 <div class="container" ng-controller = "addCtrl">
   <h1>Add to the list!</h1>
-  <form  class="form-horizontal" role="form">
+  <form  class="form-horizontal" role="form" name = "myform">
   <div class=" form-group">
-        <input type="text" ng-model = "movie.title" placeholder = "title" class = "form-control">
-      <input list = "genres" ng-model = "movie.genre" placeholder = "genre" class = "form-control">
+        <input type="text" ng-model = "movie.title" placeholder = "title" class = "form-control" ng-required="true">
+      <input list = "genres" ng-model = "movie.genre" placeholder = "genre" class = "form-control" ng-required="true">
       <datalist id = "genres">
         <option value="Action">
         <option value="Fantasy"></option>
@@ -15,8 +15,9 @@
         <option value="Family"></option>
       </datalist>
 
-  <input type="year" ng-model = "movie.year" placeholder = "year released" max = "2016" class = "form-control">
-  <input list= "ratings" ng-model = "movie.rating" placeholder = "rating" class = "form-control">
+  <input type="text" ng-model = "movie.actors" placeholder = "actors" class = "form-control"> <input type = "button" ng-click = "addActors()" value = "click me to add actor"></input>
+  <input type="year" ng-model = "movie.year" placeholder = "year released" max = "2016" class = "form-control" ng-required="true">
+  <input list= "ratings" ng-model = "movie.rating" placeholder = "rating" class = "form-control" ng-required="true">
   <datalist id = "ratings">
     <option value="G"></option>
     <option value="PG"></option>
@@ -24,9 +25,7 @@
     <option value="R"></option>
     <option value="NC-17"></option>
   </datalist>
-  <input type="text" ng-model = "movie.actors" placeholder = "actors" class = "form-control"> <button ng-click = "addActors()">click me to add actor</button>
-  <button ng-click = "submitMovie();addForm.$setPristine();" class="btn btn-primary">submit</button>
-
+  <button ng-click = "myform.$valid && submitMovie()" class="btn btn-primary">submit</button>
   </form>
   </div>
 </div>

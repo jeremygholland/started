@@ -11,15 +11,12 @@ app.controller('addCtrl' ,[ '$scope', '$filter','$firebase', function($scope, $f
   }
   var fireRef = new Firebase('https://inmotioncrud.firebaseio.com/movies');
   $scope.movies = $firebase(fireRef).$asArray();
-  var saveUser = function(event){
-    event.preventDefault();
-  }
   $scope.addActors = function(){
       var actors = $scope.movie.actors;
     $scope.actorAll.push(actors);
     $scope.movie.actors ='';
-
   }
+
  $scope.submitMovie = function(){
    $scope.movie.actors = " ";
    $scope.movies.$add({
