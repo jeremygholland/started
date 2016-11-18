@@ -3,21 +3,33 @@
       "0": {
          "title": "Monty Python and the Holy Grail",
          "genre": "Comedy",
-         "actors": "Terry Jones John Cleese Eric Idol",
+         "actors": {
+           "0":"Terry Jones",
+           "1":"John Cleese",
+           "2":"Eric Idol"
+           },
          "year": 1975,
          "rating": "PG"
       },
       "1": {
          "title": "Zootopia",
          "genre": "Comedy",
-         "actors": "Jason Bateman Shakira Idris Elba",
+         "actors": {
+           "0":"Jason Bateman",
+           "1":"Shakira",
+           "2":"Idris Elba"
+           },
          "year": 2016,
          "rating": "PG"
       },
       "2": {
          "title": "Deadpool",
          "genre": "Comedy",
-         "actors": "Ryan Reynolds Ed Skrein Morena Baccarin",
+         "actors": {
+           "0":"Ryan Reynolds",
+           "1":"Ed Skrein",
+           "2":"Morena Baccarin"
+           },
          "year": 2016,
          "rating": "R"
       }
