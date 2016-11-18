@@ -6,7 +6,7 @@ app.config([
   function($stateProvider, $urlRouterProvider){
     $stateProvider
       .state('home', {
-        controller: 'addCtrl',
+        controller: 'myCtrl',
         url: '/home',
         templateUrl: 'views/home.html'
       })
@@ -32,7 +32,4 @@ app.controller('myCtrl' , ['$scope', '$filter','$firebase', function($scope, $fi
  $scope.removeMovie = function(movie){
    $scope.movies.$remove(movie);
  }
-  $scope.check = function(){
-    console.log($scope.movies.id)
-  }
 }])
