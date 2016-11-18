@@ -1,2 +1,6 @@
-.testing {
-  width: 71.42857%; }
+.gutters {
+  width: 90%;
+  margin: 0 auto; }
+
+.hide {
+  display: none; }
