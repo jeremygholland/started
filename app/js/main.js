@@ -1,4 +1,4 @@
-var app = angular.module('app', ['firebase', 'ui.router'])
+var app = angular.module('app', ['firebase', 'ui.router', 'ngSanitize' ])
 
 app.config([
   '$stateProvider',
@@ -15,13 +15,24 @@ app.config([
         url: '/add',
         templateUrl: 'views/add.html'
       })
+      .state('delete', {
+        controller: 'myCtrl',
+        url: '/delete',
+        templateUrl: 'views/delete.html'
+      })
       $urlRouterProvider.otherwise('home');
   }
 ])
 
 app.controller('myCtrl' , ['$scope', '$filter','$firebase', function($scope, $filter, $firebase){
 
-
+  var clearForm = function(){
+    $scope.movie.title = '';
+    $scope.movie.genre = '';
+    $scope.movie.actors = '';
+    $scope.movie.year = '';
+    $scope.movie.rating = '';
+  }
   var fireRef = new Firebase('https://inmotioncrud.firebaseio.com/movies');
   $scope.movies = $firebase(fireRef).$asArray();
   $scope.newMovie = "";
@@ -34,6 +45,8 @@ app.controller('myCtrl' , ['$scope', '$filter','$firebase', function($scope, $fi
      rating: $scope.movie.rating,
    })
    $scope.newMovie = '';
+   clearForm();
+
  }
 
  $scope.removeMovie = function(movie){

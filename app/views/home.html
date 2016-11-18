@@ -2,17 +2,20 @@
   <label for="search"> search: <input type="text" ng-model="searchText"></label>
 </div>
 
-<div ng-repeat = "movie in movies| filter:searchText">
-  <div class="jumbotron">
-  <div class = "row"><button ng-click = "removeMovie(movie)">remove </button>
-    <div class="col-md-6">
-  <p>{{movie.title}} ({{movie.year}})</p>
-  </div>
-</div>
-<div class="row">
-    <div class="col-md-3"><p>{{movie.genre}}</p></div>
-  <div class="col-md-3"><p>{{movie.actors}}</p></div>
-  <div class="col-md-3"><p>{{movie.rating}}</p></div>
-</div>
-</div>
-</div>
+
+<table class = "table table-striped">
+  <tr>
+    <td>#</td>
+    <td>Title</td>
+    <td>Actors</td>
+    <td>Genre</td>
+    <td>Rating</td>
+  </tr>
+  <tr ng-repeat = "movie in movies| filter:searchText" >
+    <td>{{$index+1}}</td>
+    <td>{{movie.title}} ({{movie.year}})</td>
+    <td>{{movie.actors}}</td>
+    <td>{{movie.genre}}</td>
+    <td>{{movie.rating}}</td>
+  </tr>
+</table>

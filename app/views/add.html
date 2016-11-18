@@ -1,0 +1,31 @@
+<div class="container">
+  <h1>Add to the list!</h1>
+  <form  class="form-inline">
+  <div class=" form-group">
+        <input type="text" ng-model = "movie.title" placeholder = "title" class = "form-control">
+      <input list = "genres" ng-model = "movie.genre" placeholder = "genre" class = "form-control">
+      <datalist id = "genres">
+        <option value="Action">
+        <option value="Fantasy"></option>
+        <option value="Comedy"></option>
+        <option value="Suspense"></option>
+        <option value="Horror"></option>
+        <option value="Sci-Fi"></option>
+        <option value="Romance"></option>
+        <option value="Family"></option>
+      </datalist>
+  </div>
+  <input type="text" ng-model = "movie.actors" placeholder = "actors" class = "form-control">
+  <input type="year" ng-model = "movie.year" placeholder = "year released" max = "2016" class = "form-control">
+  <input list= "ratings" ng-model = "movie.rating" placeholder = "rating" class = "form-control">
+  <datalist id = "ratings">
+    <option value="G"></option>
+    <option value="PG"></option>
+    <option value="PG-13"></option>
+    <option value="R"></option>
+    <option value="NC-17"></option>
+  </datalist>
+  <button ng-click = "submitMovie();addForm.$setPristine();" class="btn btn-primary">submit</button>
+  </form>
+
+</div>
