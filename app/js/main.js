@@ -1,4 +1,23 @@
-var app = angular.module('app', ['firebase'])
+var app = angular.module('app', ['firebase', 'ui.router'])
+
+app.config([
+  '$stateProvider',
+  '$urlRouterProvider',
+  function($stateProvider, $urlRouterProvider){
+    $stateProvider
+      .state('home', {
+        controller: 'myCtrl',
+        url: '/home',
+        templateUrl: 'views/home.html'
+      })
+      .state('add', {
+        controller: 'myCtrl',
+        url: '/add',
+        templateUrl: 'views/add.html'
+      })
+      $urlRouterProvider.otherwise('home');
+  }
+])
 
 app.controller('myCtrl' , ['$scope', '$filter','$firebase', function($scope, $filter, $firebase){
 
