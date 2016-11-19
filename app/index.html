@@ -16,11 +16,22 @@
     <script src = "https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.2/angular-ui-router.js"></script>
     <script src= "https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.7/angular-sanitize.js"></script>
     <script src = "js/lib/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script scr = "js/lib/validate.js"></script>
   <!--endbuild-->
 </head>
 
 <body ng-controller = "myCtrl">
+  <nav class="navbar navbar-default" >
+    <div class="container">
+      <h5 class="navbar-text">Jeremy Holland In Motion Software Coding Challenge</h5>
+  <ul class="nav nav-tabs">
+    <li role="presentation"><a ui-sref= "home">Home</a></li>
+    <li role="presentation"><a ui-sref = "add">Add Movie</a></li>
+    <li role="presentation"><a ui-sref = "delete">Delete Entry</a></li>
+  </ul>
+</div>
+</nav>
 
 <div class="gutters">
 

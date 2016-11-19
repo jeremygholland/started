@@ -14,8 +14,12 @@
         <option value="Romance"></option>
         <option value="Family"></option>
       </datalist>
-
-  <input type="text" ng-model = "movie.actors" placeholder = "actors" class = "form-control"> <input type = "button" ng-click = "addActors()" value = "click me to add actor"></input>
+    <div class="input-group">
+      <input type="text" class="form-control"  ng-model = "movie.actors" placeholder = "actors">
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="button" ng-click = "addActors()">Add actor</button>
+      </span>
+    </div><!-- /input-group -->
   <input type="year" ng-model = "movie.year" placeholder = "year released" max = "2016" class = "form-control" ng-required="true">
   <input list= "ratings" ng-model = "movie.rating" placeholder = "rating" class = "form-control" ng-required="true">
   <datalist id = "ratings">

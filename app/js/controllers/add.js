@@ -1,5 +1,5 @@
 
-app.controller('addCtrl' ,[ '$scope', '$filter','$firebase', function($scope, $filter, $firebase){
+app.controller('addCtrl' ,[ '$scope', '$filter','$firebase', '$state', function($scope, $filter, $firebase, $state){
   $scope.actorAll = []
   var clearForm = function(){
     $scope.movie.title = '';
@@ -28,6 +28,6 @@ app.controller('addCtrl' ,[ '$scope', '$filter','$firebase', function($scope, $f
      rating: $scope.movie.rating,
    })
    clearForm();
-
+ $state.go('home');
  }
  }])
