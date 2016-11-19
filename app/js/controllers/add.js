@@ -18,6 +18,7 @@ app.controller('addCtrl' ,[ '$scope', '$filter','$firebase', '$state', function(
   }
 
 
+
  $scope.submitMovie = function(){
    $scope.movie.actors = " ";
    $scope.movies.$add({
