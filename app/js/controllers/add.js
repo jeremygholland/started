@@ -8,7 +8,7 @@ app.controller('addCtrl', ['$scope', '$filter', '$firebase', '$state', function(
         $scope.movie.rating = '';
         $scope.actorAll = []
     }
-    var fireRef = new Firebase('https://inmotioncrud.firebaseio.com/movies');
+    var fireRef = new Firebase('https://inmotioncrud-7f50a.firebaseio.com/movies');
     $scope.movies = $firebase(fireRef).$asArray();
     $scope.addActors = function() {
         var actors = $scope.movie.actors;

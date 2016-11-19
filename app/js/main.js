@@ -26,6 +26,6 @@ app.config([
 
 app.controller('myCtrl' , ['$scope', '$filter','$firebase', function($scope, $filter, $firebase){
 
-  var fireRef = new Firebase('https://inmotioncrud.firebaseio.com/movies');
+  var fireRef = new Firebase('https://inmotioncrud-7f50a.firebaseio.com/movies');
   $scope.movies = $firebase(fireRef).$asArray();
 }])
