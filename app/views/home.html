@@ -1,29 +1,29 @@
-<div class="">
-<h2 class ="page-header">This is the list as it stands!</h2>
+<div>
+    <h2 class="page-header">This is the list as it stands!</h2>
 </div>
-
-<form class = "form-horizontal">
-<div class = "form-group">
-  <label for="search" class = "control-label col-sm-2"> Search for your movie</label>
-  <div class="col-sm-4">
-  <input type="text" ng-model="searchText" class = "form-control" >
-  </div>
-</div>
+<form class="form-horizontal">
+    <div class="form-group">
+        <label for="search" class="control-label col-sm-2"> Search for your movie</label>
+        <div class="col-sm-4">
+            <input type="text" ng-model="searchText" class="form-control">
+        </div>
+    </div>
 </form>
-
-<table class = "table table-striped">
-  <tr>
-    <td>#</td>
-    <td>Title</td>
-    <td>Actors</td>
-    <td>Genre</td>
-    <td>Rating</td>
-  </tr>
-  <tr ng-repeat = "movie in movies| filter:searchText" >
-    <td>{{$index+1}}</td>
-    <td>{{movie.title}} ({{movie.year}})</td>
-    <td><p ng-repeat = "(key, value) in movie.actors track by $index">{{value}}</p></td>
-    <td>{{movie.genre}}</td>
-    <td>{{movie.rating}}</td>
-  </tr>
+<table class="table table-striped">
+    <tr>
+        <td>#</td>
+        <td>Title</td>
+        <td>Actors</td>
+        <td>Genre</td>
+        <td>Rating</td>
+    </tr>
+    <tr ng-repeat="movie in movies| filter:searchText">
+        <td>{{$index+1}}</td>
+        <td>{{movie.title}} ({{movie.year}})</td>
+        <td>
+            <p ng-repeat="(key, value) in movie.actors track by $index">{{value}}</p>
+        </td>
+        <td>{{movie.genre}}</td>
+        <td>{{movie.rating}}</td>
+    </tr>
 </table>

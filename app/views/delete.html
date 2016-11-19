@@ -1,18 +1,26 @@
-<table class = "table table-striped">
-  <tr>
-    <td>#</td>
-    <td>Title</td>
-    <td>Actors</td>
-    <td>Genre</td>
-    <td>Rating</td>
-    <td>Delete</td>
-  </tr>
-  <tr ng-repeat = "movie in movies| filter:searchText" >
-    <td>{{$index+1}}</td>
-    <td>{{movie.title}} ({{movie.year}})</td>
-    <td><p ng-repeat = "(key, value) in movie.actors track by $index">{{value}}</p></td>
-    <td>{{movie.genre}}</td>
-    <td>{{movie.rating}}</td>
-    <td> <button href="" class = "btn btn-danger" ng-click = "removeMovie(movie)">X</button></td>
-  </tr>
+<div>
+    <h2 class="page-header">Delete movie? <br>
+  <small>Do so by clicking the <span class = "emphasis">X</span> next to the entry that you would like to delete. </small></h2>
+</div>
+<table class="table table-striped">
+    <tr>
+        <td>#</td>
+        <td>Title</td>
+        <td>Actors</td>
+        <td>Genre</td>
+        <td>Rating</td>
+        <td>Delete</td>
+    </tr>
+    <tr ng-repeat="movie in movies| filter:searchText">
+        <td>{{$index+1}}</td>
+        <td>{{movie.title}} ({{movie.year}})</td>
+        <td>
+            <p ng-repeat="(key, value) in movie.actors track by $index">{{value}}</p>
+        </td>
+        <td>{{movie.genre}}</td>
+        <td>{{movie.rating}}</td>
+        <td>
+            <button href="" class="btn btn-danger" ng-click="removeMovie(movie)">X</button>
+        </td>
+    </tr>
 </table>
