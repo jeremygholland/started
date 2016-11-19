@@ -2,8 +2,17 @@
   <h1>Add to the list!</h1>
   <form  class="form-horizontal" role="form" name = "myform">
   <div class=" form-group">
-        <input type="text" ng-model = "movie.title" placeholder = "title" class = "form-control" ng-required="true">
-      <select id = "genres" ng-model = "movie.genre" value = "genre" value = "genre" class = "form-control" ng-required="true">
+
+    <div class="form-group">
+   <label for="Title" class="col-sm-2 control-label">Title</label>
+   <div class="col-sm-4">
+     <input class="form-control" id="title" ng-model="movie.title" placeholder="Title" ng-required="true" />
+   </div>
+ </div>
+ <div class="form-group">
+   <label for="Genre" class = "col-sm-2 control-label"> Genre</label>
+      <div class = "col-sm-4"><select id = "genres" ng-model = "movie.genre" value = "genre" value = "genre" class = "form-control" ng-required="true">
+
         <option value="" disabled selected>Genre</option>
         <option value="Action">Action</option>
         <option value="Fantasy">Fantasy</option>
@@ -14,13 +23,27 @@
         <option value="Romance">Romance</option>
         <option value="Family">Family</option>
       </select>
-    <div class="input-group">
+    </div>
+    </div>
+
+    <div class="form-group">
+      <label for="Actor" class = " col-sm-2 control-label">Actors</label>
+      <div class="col-sm-4">
       <input type="text" class="form-control"  ng-model = "movie.actors" placeholder = "actors">
-      <span class="input-group-btn">
-        <button class="btn btn-default" type="button" ng-click = "addActors()">Add actor</button>
-      </span>
-    </div><!-- /input-group -->
-  <input type="number" ng-model = "movie.year" placeholder = "year released" max = "2016" min = "1936" class = "form-control" ng-required="true">
+      <div class="input-group-btn">
+        <button class="btn btn-success" id ="actorBtn" type="button" ng-click = "addActors()">Add actor</button>
+      </div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="Year" class = "col-sm-2 control-label">Release Year</label>
+  <div class="col-sm-4"><input type="number" ng-model = "movie.year" placeholder = "year released" max = "2016" min = "1936" class = "form-control" ng-required="true">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="rating" class = "col-sm-2 control-label"></label>
+    <div class = "col-sm-2">
   <select list= "ratings" ng-model = "movie.rating" placeholder = "rating" class = "form-control" ng-required="true">
     <option value="" disabled selected>Rating</option>
     <option value="G">G</option>
@@ -29,7 +52,11 @@
     <option value="R">R</option>
     <option value="NC-17">NC-17</option>
   </select>
-  <button ng-click = "myform.$valid && submitMovie()" class="btn btn-primary">submit</button>
+  </div>
+  </div>
+  <div class="center-block">
+  <button ng-click = "myform.$valid && submitMovie()" class="btn btn-primary center-block">submit</button>
+  </div>
   </form>
   </div>
 
