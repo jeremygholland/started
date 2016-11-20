@@ -13,7 +13,7 @@ To start program, clone this repo and then run:
   `
   <br>
   <br>
-This project used Zellwk's gulp starter to begin this project and get the general project layout. 
+This project used Zellwk's gulp starter to begin this project and it keeps its file structure. 
 <br>
 <br>
 Thank you for your time. 
