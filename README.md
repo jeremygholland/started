@@ -3,8 +3,9 @@
 Clone this repo and then run:
 <br>
 <br>
-` npm install`<br>
  ` cd started`<br>
+` npm install`<br>
+<br>
   `gulp
   `
   <br>
