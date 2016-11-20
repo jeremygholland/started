@@ -1,6 +1,6 @@
-app.controller('deleteCtrl' ,[ '$scope', '$filter','$firebase', '$state', function($scope, $filter, $firebase, $state){
+app.controller('deleteCtrl' ,[ '$scope', '$filter','$firebaseArray', '$state', function($scope, $filter, $firebaseArray, $state){
   var fireRef = new Firebase('https://inmotioncrud-7f50a.firebaseio.com/movies');
-  $scope.movies = $firebase(fireRef).$asArray();
+  $scope.movies = $firebaseArray(fireRef);
 
   $scope.removeMovie = function(movie){
     $scope.movies.$remove(movie);

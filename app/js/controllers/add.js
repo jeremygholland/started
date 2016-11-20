@@ -1,4 +1,4 @@
-app.controller('addCtrl', ['$scope', '$filter', '$firebase', '$state', function($scope, $filter, $firebase, $state) {
+app.controller('addCtrl', ['$scope', '$filter', '$firebaseArray', '$state', function($scope, $filter, $firebaseArray, $state) {
     $scope.actorAll = []
     var clearForm = function() {
         $scope.movie.title = '';
@@ -9,7 +9,7 @@ app.controller('addCtrl', ['$scope', '$filter', '$firebase', '$state', function(
         $scope.actorAll = []
     }
     var fireRef = new Firebase('https://inmotioncrud-7f50a.firebaseio.com/movies');
-    $scope.movies = $firebase(fireRef).$asArray();
+    $scope.movies = $firebaseArray(fireRef);
     $scope.addActors = function() {
         var actors = $scope.movie.actors;
         $scope.actorAll.push(actors);
@@ -27,6 +27,7 @@ app.controller('addCtrl', ['$scope', '$filter', '$firebase', '$state', function(
             year: $scope.movie.year,
             rating: $scope.movie.rating,
         })
+        console.log(fireRef)
         clearForm();
         $state.go('home');
     }

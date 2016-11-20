@@ -1,8 +1,8 @@
-app.controller('editCtrl', ['$scope', '$location', '$firebsaeObject', '$routeParams', function($scope, $location, $firebaseObject, $routeParams){
+app.controller('editCtrl', ['$scope', '$location', '$firebaseObject', '$stateParams', function($scope, $location, $firebaseObject, $stateParams){
 
-var id = $routeParams.id;
+var id = $stateParams.id;
 
-var ref = new Firebase('https://inmotioncrud-7f50a.firebaseio.com/movies/'+id);
+var ref = new Firebase('https://inmotioncrud-7f50a.firebaseio.com/movies/'+id + '');
 
 $scope.movie = $firebaseObject(ref);
 
@@ -15,6 +15,7 @@ $scope.editMovie = function() {
        year: $scope.movie.year,
        rating: $scope.movie.rating
      });
+     $state.go('home');
 
-     
+}
 }])
