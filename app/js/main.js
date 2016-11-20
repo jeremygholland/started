@@ -20,6 +20,11 @@ app.config([
         url: '/delete',
         templateUrl: 'views/delete.html'
       })
+      .state('edit', {
+        controller: 'editCtrl',
+        templateUrl: 'views/edit.html',
+        url: '/edit/:id'
+      })
       $urlRouterProvider.otherwise('home');
   }
 ])
