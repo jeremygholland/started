@@ -1,4 +1,4 @@
-app.controller('editCtrl', ['$scope', '$location', '$firebaseObject', '$stateParams', function($scope, $location, $firebaseObject, $stateParams){
+app.controller('editCtrl', ['$scope', '$state', '$location', '$firebaseObject', '$stateParams', function($scope, $state, $location, $firebaseObject, $stateParams){
 
 var id = $stateParams.id;
 
