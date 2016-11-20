@@ -1,5 +1,11 @@
-# Gulp Starter for CSS Tricks Tutorial  
+# InMotion Coding Challenge for Jeremy Holland
 
-This repo is a gulp starter for this CSS Tricks tutorial. 
+Clone this repo and then run:
 
-Remember to do run the `npm install` command after cloning this repo :) 
+` npm install
+  cd started
+  gulp
+  `
+This project used Zellwk's gulp starter to begin this project and get the general project layout. 
+
+Thank you for your time. 
