@@ -5,7 +5,6 @@ Clone this repo and then run:
 <br>
  ` cd started`<br>
 ` npm install`<br>
-<br>
   `gulp
   `
   <br>
