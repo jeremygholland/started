@@ -2,7 +2,10 @@
    "movies": {
       "0": {
          "title": "Monty Python and the Holy Grail",
-         "genre": "Comedy",
+         "genre": {
+           "0":"Comedy",
+           "1":"Fantasy"
+         },
          "actors": {
            "0":"Terry Jones",
            "1":"John Cleese",
@@ -13,7 +16,10 @@
       },
       "1": {
          "title": "Zootopia",
-         "genre": "Comedy",
+         "genre": {
+           "0":"Comedy",
+           "1":"Family"
+         },
          "actors": {
            "0":"Jason Bateman",
            "1":"Shakira",
@@ -24,7 +30,10 @@
       },
       "2": {
          "title": "Deadpool",
-         "genre": "Comedy",
+         "genre": {
+           "0":"Comedy",
+           "1":"Action"
+         },
          "actors": {
            "0":"Ryan Reynolds",
            "1":"Ed Skrein",

@@ -21,7 +21,7 @@ app.controller('addCtrl', ['$scope', '$filter', '$firebaseArray', '$state', func
         $scope.movie.actors = " ";
         $scope.movies.$add({
             title: $scope.movie.title,
-            genre: $scope.movie.genre,
+            genre: $scope.genreAll,
             actors: $scope.actorAll,
             year: $scope.movie.year,
             rating: $scope.movie.rating,

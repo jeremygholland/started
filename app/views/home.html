@@ -24,7 +24,7 @@
         <td>
             <p ng-repeat="(key, value) in movie.actors track by $index">{{value}}</p>
         </td>
-        <td>{{movie.genre}}</td>
+        <td><p ng-repeat = "(key, value) in movie.genre track by $index">{{value}}</p></td>
         <td>{{movie.rating}}</td>
         <td><a ui-sref ="edit({ id: movie.$id })" class="btn btn-small btn-primary">Edit</a></a></td>
     </tr>
