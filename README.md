@@ -13,7 +13,7 @@ To start program, clone this repo and then run:
   `
   <br>
   <br>
-This project used Zellwk's gulp starter to begin this project and it keeps its file structure. 
+This project used Zellwk's gulp starter to begin this project and it keeps its file structure. It as well uses Angular's Ui-Router.  
 <br>
 <br>
 Thank you for your time. 
