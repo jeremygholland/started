@@ -17,7 +17,7 @@
         <td>
             <p ng-repeat="(key, value) in movie.actors track by $index">{{value}}</p>
         </td>
-        <td>{{movie.genre}}</td>
+          <td><p ng-repeat = "(key, value) in movie.genre track by $index">{{value}}</p></td>
         <td>{{movie.rating}}</td>
         <td>
             <button href="" class="btn btn-danger" ng-click="removeMovie(movie)">X</button>
