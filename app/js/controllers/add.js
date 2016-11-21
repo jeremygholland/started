@@ -1,19 +1,18 @@
 app.controller('addCtrl', ['$scope', '$filter', '$firebaseArray', '$state', function($scope, $filter, $firebaseArray, $state) {
-    $scope.actorAll = []
-    var clearForm = function() {
-        $scope.movie.title = '';
-        $scope.movie.genre = '';
-        $scope.movie.actors = '';
-        $scope.movie.year = '';
-        $scope.movie.rating = '';
-        $scope.actorAll = []
-    }
+    $scope.actorAll = [];
+    $scope.genreAll = [];
+
     var fireRef = new Firebase('https://inmotioncrud-7f50a.firebaseio.com/movies');
     $scope.movies = $firebaseArray(fireRef);
     $scope.addActors = function() {
         var actors = $scope.movie.actors;
         $scope.actorAll.push(actors);
         $scope.movie.actors = '';
+    }
+    $scope.addGenre = function(){
+      var genres = $scope.movie.genre;
+      $scope.genreAll.push(genres);
+      $scope.movie.genre = '';
     }
 
 
@@ -27,8 +26,8 @@ app.controller('addCtrl', ['$scope', '$filter', '$firebaseArray', '$state', func
             year: $scope.movie.year,
             rating: $scope.movie.rating,
         })
-        console.log(fireRef)
-        clearForm();
+        $scope.myform.$setPristine();
+
         $state.go('home');
     }
 }])
