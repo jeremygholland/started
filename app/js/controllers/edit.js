@@ -24,8 +24,8 @@ $scope.movie = $firebaseObject(ref);
 $scope.editMovie = function() {
      $scope.movie.$save({
        title: $scope.movie.title,
-       genre: $scope.movie.genre,
-       actors: $scope.movie.actors,
+       genre: $scope.genreAll,
+       actors: $scope.actorAll,
        year: $scope.movie.year,
        rating: $scope.movie.rating
      });
